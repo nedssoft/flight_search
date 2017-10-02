@@ -9,6 +9,12 @@
     <title>Title</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
           integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+          <style>
+              th,tr,td{
+                  padding: 10px;
+                  margin: 5px;
+              }
+          </style>
 </head>
 <body>
   
@@ -35,6 +41,24 @@
     <div id="responseField"></div>
 
 </form>
+<table>
+    <thead>
+        <tr>
+            <th >Tax</th>
+            <th>Total Price</th>
+            <th>Aircraft</th>
+            <th>Arrived_at</th>
+            <th>Booking Code</th>
+            <th>Seats Remaining</th>
+            <th>travel class</th>
+            <th>Departs_at</th>
+            <th>Flight Number</th>
+            <th>Marketing Line</th>
+            <th>Operating Line</th>
+        </tr>
+        <tr id="data_row"></tr>
+    </thead>
+</table>
 </div>
 
 
