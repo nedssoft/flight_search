@@ -31,20 +31,60 @@ $result = json_decode($result);
 //  //var_dump($result->results[0]->itineraries[0]->outbound->flights[0]);
 // var_dump($result);
 //  echo '</pre>';
+
 echo '<h1>CURRENCY:'.$result->currency.'</h1>';
 
- foreach ($result->results as $key => $data) {
+ //foreach ($result->results as $key => $data) {
+ //echo '<h1>CURRENCY:'.$result->currency.'</h1><hr>';
+
+echo "<table border=1>";
+echo "<tr><th>Departure Date</th><th>Flight Origin</th><th>Destination</th><th>Arrival Date</th><th>Flight No</th><th>Travel Class</th><th>Seats Remaining</th></tr>";
+// foreach ($result->results as $key => $data) {
+//     # code...
+//      foreach ($data->itineraries as $key => $iti) {
+//           
+//        foreach ($iti->outbound->flights as $key => $flight) {
+//            # code...
+//            echo "<p>
+//                <b> Departure Date:</b> ". $flight->departs_at.",  
+//                <b>Flight Origin:</b>  ". $flight->origin->airport.",  
+//                <b>Destination:</b>  ". $flight->destination->airport.",
+//                <b>Arrival Date:</b> ".$flight->arrives_at.",  
+//                <b>Flight No.:</b> ".$flight->flight_number. ",  
+//                <b>Travel Class:</b> ". $flight->booking_info->travel_class. ",
+//                <b>Seats Remaining:</b> ". $flight->booking_info->seats_remaining."</p>";
+//        }
+//          # code...
+//      }
+// }
+foreach ($result->results as $key => $data) {
+
      # code...
       foreach ($data->itineraries as $key => $iti) {
            
         foreach ($iti->outbound->flights as $key => $flight) {
             # code...
-            echo " <p><b> Departs_at:</b> ". $flight->departs_at.",  <b>Origin:</b>  ". $flight->origin->airport.",  <b>Destination:</b>  ". $flight->destination->airport.
-            ", <b>Arrives_at:</b> ".$flight->arrives_at.",  <b>Flight Number:</b> ".$flight->flight_number. ",  <b>Travel Class:</b> ". $flight->booking_info->travel_class.
-            ",  <b>Seats Remaining:</b> ". $flight->booking_info->seats_remaining."</p>";
+
+            // echo " <p><b> Departs_at:</b> ". $flight->departs_at.",  <b>Origin:</b>  ". $flight->origin->airport.",  <b>Destination:</b>  ". $flight->destination->airport.
+            // ", <b>Arrives_at:</b> ".$flight->arrives_at.",  <b>Flight Number:</b> ".$flight->flight_number. ",  <b>Travel Class:</b> ". $flight->booking_info->travel_class.
+            // ",  <b>Seats Remaining:</b> ". $flight->booking_info->seats_remaining."</p>";
+
+            echo "<tr>";
+            echo "<td>".$flight->departs_at."</td>";
+            echo "<td>".$flight->origin->airport."</td>";
+             echo "<td>".$flight->destination->airport."</td>";
+             echo "<td>".$flight->arrives_at."</td>";
+             echo "<td>".$flight->flight_number."</td>";
+             echo "<td>".$flight->booking_info->travel_class."</td>";
+             echo "<td>".$flight->booking_info->seats_remaining."</td>";
+             echo "</tr>";
         }
           # code...
       }
  }
 
- ?>
+
+ 
+echo "</table>";
+
+?>
