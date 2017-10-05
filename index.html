@@ -37,73 +37,7 @@
 <link rel="stylesheet" href="/resources/demos/style.css">
 
 <script>
-$(function() {
-function log( message ) {
-$( "<div>" ).text( message ).prependTo( "#log" );
-$( "#log" ).scrollTop( 0 );
-}
-$( "#origin" ).autocomplete({
-source: function( request, response ) {
-$.ajax({
-url: "http://api.sandbox.amadeus.com/v1.2/airports/autocomplete",
-dataType: "json",
-data: {
-apikey: "B0IeoT1kRuzTl1nu8Nf4grUtYcAzFNMn",
-term: request.term
-},
-success: function( data ) {
-response( data );
-}
-});
-},
-minLength: 3,
-select: function( event, ui ) {
-log( ui.item ?
-"Selected: " + ui.item.label :
-"Nothing selected, input was " + this.value);
-},
-open: function() {
-$( this ).removeClass( "ui-corner-all" ).addClass( "ui-corner-top" );
-},
-close: function() {
-$( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
-}
-});
-});
 
-$(function() {
-function log( message ) {
-$( "<div>" ).text( message ).prependTo( "#log" );
-$( "#log" ).scrollTop( 0 );
-}
-$( "#destination").autocomplete({
-source: function( request, response ) {
-$.ajax({
-url: "http://api.sandbox.amadeus.com/v1.2/airports/autocomplete",
-dataType: "json",
-data: {
-apikey: "B0IeoT1kRuzTl1nu8Nf4grUtYcAzFNMn",
-term: request.term
-},
-success: function( data ) {
-response( data );
-}
-});
-},
-minLength: 3,
-select: function( event, ui ) {
-log( ui.item ?
-"Selected: " + ui.item.label :
-"Nothing selected, input was " + this.value);
-},
-open: function() {
-$( this ).removeClass( "ui-corner-all" ).addClass( "ui-corner-top" );
-},
-close: function() {
-$( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
-}
-});
-});
 </script>
 </head>
 <body>
@@ -136,37 +70,15 @@ $( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
     <div id="responseField"></div>
 
 </form>
-<!--  <table>
-    <thead>
-        <tr>
-            <th >Tax</th>
-            <th>Total Price</th>
-            <th>Aircraft</th>
-            <th>Arrived_at</th>
-            <th>Booking Code</th> 
-            <th>Seats Remaining</th>
-            <th>travel class</th>
-            <th>Departs_at</th>
-            <th>Flight Number</th>
-            <th>Marketing Line</th> 
-            <!-- <th>Operating Line</th> 
-        </tr>
-
-        <tr id="data_srow"></tr>
-    </thead>
-</table>
-    </thead>
-    <tbody>
-      <tr id="data_row"></tr>
-    </tbody>
-</table> -->
 
 </div>
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
-<!-- <script src="./search.js"></script> -->
+<script src="./autocomplete.js"></script>
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>-->
 <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
-        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>-->
+     
+integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>-->
+
 
 </body>
 </html>
